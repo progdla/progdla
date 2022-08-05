@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta name="author" content="DAMBE Lamboni,Etudiant Togolais en Algerie"/>
+        <meta name="keywords" content="langage C,langage C++, langage java,C,C++,Java,python,langage html/css,html,css,python,php,C#,langage R,Javascript,Jquery,BootstrapLangage C,Bases du C,Bases du langage C,Generalite  du C,programmation informatique,codage,langage de programmation, programmation C,C coding,debutant en C,debutant en langage C,les conditons,les boucles,les structures, les fonctions,les variables,les types de données, les operteurs ,les exercices langage C"/>
+        <meta name="description" content="Les Base du Langage C,Le contenu de site porte sur la programmation informatique .Nous parlons du Langage C,du langage C++,du java,html/css,python,php,C#,langage R,Javascript,Jquery,Bootstrap aussi bien pour les debutants que ceux qui ont un niveau evolué."/>
+        <title>Les Fonctions En Langage C</title>
+         <link rel="stylesheet" type="text/css" href="Fonctions_C.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       
+
+        </head>
+    <body clas="container-fluid">
+          <!--On insert juste apres body le lien du CDN  JQuery afin de de la pseudo dynamiser le site-->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <main class="container-fluid">
+            <header class="header bg-dark p-4 text-center text-uppercase text-white ">
+                <h1 class="h1 font-weight-bolder"> Les Fonction En Langage C</h1>
+            </header>
+            <div class="container-fluid ImageSCont my-3">
+                <div class="row my-2 ">
+                    <div class="col ImageSContCol1 mr-2">
+                        
+                    </div>
+                    <div class="col ImageSContCol2 ml-2">
+                       
+                        
+                    </div>
+
+                </div>
+             </div>
+
+            <div class="container-fluid ContentPP rounded px-2 px-xs-3 pb-4">
+                <div class="row my-3 ligneCont px-1">
+                    <div class=" col col-xs-12   bg-dark Sommaire my-3 rounded p-2 mx-xs-1 mx-md-2">
+                            <h2 class="h1 text-center text-white text-uppercase " >Sommaire</h2>
+                            <div class="navbar ">
+                            <ul class="nav flex-column">
+                                        <li class="nav-item  py-2"><a class="link" href="#Generalite">1) Généralité</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#Definition">2) Définition</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#RecourFonct">3) Pourquoi faire recours aux fonctions</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#ExempleFonct">4) Exemple de fonction</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#CreerFonct">5) Création d’une fonction</a></li>
+                                        <li class="nav-item  py-2"><a class="link" href="#Protype_fct">5.1) Prototype d’une fonction</a></li>
+                                        <li class="nav-item  py-2"><a class="link" href="#Appel_fct">5.2) Appel d’une fonction</a></li>
+                                        <li class="nav-item  py-2"><a class="link" href="#Def_fonction">5.3) Definition d’une fonction</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#Param_Arg_Portee">6) Paramètres, arguments et leur potée</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#Exo_Pratique">7) Exercice pratique</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#SolutionExoP">8) Solution de l'exo</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#Resume">9) Resumé</a></li>
+
+                                        <li class="nav-item  py-2"><a class="link" href="#Refs">10) Lien utiles</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-8  ContenuMeme my-3 rounded p-2 ml-4">
+
+                        <div class="General">
+                            <h2 class="h2 font-weight-bold"  id="Generalite">1) Généralité</h2>
+                            <p>
+                                Dans notre  vie quotidienne, on est souvent confronté à d’énormes problèmes auxquels on fait recours à l’informatique notamment à la programmation  afin de trouver satisfaction. Pour ce faire, le programmeur se met à réfléchir sur quelle approche faut-il adopter pour  parvenir aux besoins attendus .Il finit par trouver l’approche puis il passe au codage peut-être en une seule fonction main (). Bien bien-sûr que son programme marchera bien s’il n’y a pas d’erreurs, ce programme n’est pas optimal, elle nécessite beaucoup de ressources. Pour palier cela, les fonctions sont indispensables et c’est dans cette perspective que nous allons découvrir ensemble les fonctions notamment en langage C et C++.
+                            </p>
+                        </div>
+
+                        <div class="Def">
+                            <h2 class="h2 font-weight-bold" id="Definition">2)  Définition</h2>
+                            <p>
+                                Une fonction en informatique est un muni programme ou mieux encore un sous-programme permettant de réaliser une tâche spécifique puis retourner son résultat pour une  utilisation  ultérieure. Imaginer que vous êtes titulaire d’une classe contenant  plus de 100 élèves et que vous devriez nécessairement calculer leurs moyens pour  la délibération. Pour cela, on écrit une fonction qui  calcule  la moyenne et l’appelle en lui passant les caractéristiques de chaque élève au lieu de répéter le même code source pour chacun de ces derniers.
+                            </p>
+
+                        </div>
+                        <div class="RecourF" >
+                            <h2 class="h2 font-weight-bold" id="RecourFonct"> 3) Pourquoi faire recours aux fonctions ?</h2>
+                                <p>
+                                    Très belle question ! Qu’en pensez –vous ?
+                                    En effet, les  fonctions sont utiles dans  les  programmes complexes pour de multiples raisons :<br>
+                                    🔸  rendre son code lisible  et compressible  à tous<br>
+                                    🔸  faciliter le repérage d’erreurs<br>
+                                    🔸  Eviter la redondance du code<br>
+                                    🔸  réutiliser cette fonction sans avoir besoin de la réécrire.<br>
+                                    🔸  La gestion efficace de la maintenance logistique<br>
+                                    🔸  Le gain de temps d’élaboration et d’exécution du programme<br>
+                                    🔸  Le gain d’espace mémoire, etc.<br>
+                                Vu cet allègement capital qu’apportent les fonctions, alors n’hésitez pas à s’en servir dans des  programmes complexe comme  la construction de Logiciel et autre.
+                                </p>
+                        </div>
+
+                        <div class="ExempleF my-5">
+                            <h2 class="h2 font-weight-bold" id="ExempleFonct">4) Exemple de fonction</h2>
+                            <div>
+                                En fait, on pouvait ne pas faire cet exemple et continuer mais  les explications suivantes seront abstraites et difficiles à comprendre, sur ceux je  vous propose cet exemple afin qu’on puisse voir les choses de façon clair et nette.
+                                L’exemple est le suivant : Ecrire un programme C ou C++ qui demande à l’utilisateur d’entrer deux nombres au clavier    puis calcule leur somme et  affiche en fin ce résultat. Le calcul de la somme doit se faire par une fonction .En plus de cela ajouter une autre fonction qui se content d’afficher un simple bonjour.
+                                Avant de passer  à la résolution de cet exercice, il serait important de rafraîchir vos méninges sur les notions de bases de   la programmation en C/C++ de l’article précédent.  Sans plus tarder, je vous  propose la solution ci-dessous à la fois en  C et C++.
+
+                            </div>
+                            <div class="row ImgsExemple my-2 py-2">
+                                <div class="col-6 ImgExemple1">
+                                    <img src="Code1.jpg" alt="Code C de l'exemple"  id="ImgExemple1">
+                                </div>
+                                <div class="col-6 ImgExemple2">
+                                    <img src="Code2.jpg" alt="Code C++ de l'exemple" id="ImgExemple2">
+                                </div>
+                            </div>
+                            <div class="row  my-4 ">
+                                <div class="col mx-2"> Nous voici arrivé à la fin de cet exemple qui nous était  indispensable pour la suite.</div>
+                            </div>
+
+                        </div>
+
+                        <div class="CreeFonct">
+                            <h2 class="h2 font-weight-bold" id="CreerFonct"> 5) Création  de fonction</h2>
+                            <div>
+                                <p>
+                                    Chaque programme informatique contient une fonction principale appeler main ().En plus de cette fonction main, le programmeur est souvent amené à créer une fonction spécifique destinée à une tâche précise. Ainsi, une  fonction admet  trois(3) parties essentielles:<br>
+                                    🔸	le prototype<br>
+                                    🔸	l’appel<br>
+                                    🔸	la définition<br>
+                                </p>
+
+                                <div class="Protype">
+                                    <h3 class="h3 font-weight-bold" id="Protype_fct"> 5.1) Le Prototype</h3>
+                                    <p>
+                                        Le prototype est un signale que le programmeur envoie à la fonction main (principale) ou à tout autre fonction pour l'indiquer  l’existence d’une autre fonction qu’elle fera usage par  la suite. Ce prototype doit contenir de manière successive :<br>
+                                        ✔	Le type de retour de la fonction<br>
+                                        ✔	Le nom de la fonction<br>
+                                        ✔	Le type des paramètres suivi des paramètres, tous entre parenthèses<br>
+                                        ✔	Un point-virgule à la fin(Ne jamais oublier)<br>
+
+                                    </p>
+                                    <div>
+                                        <p class="font-weight-bold my-2"><span class="h4">Syntaxe:</span><br>
+                                            &lt<span class="text-danger font-weight-bold">Type_retour fct</span>&gt &nbsp&ltnom_fct&gt (type1 <span class="text-danger font-weight-bold">par 1</span>, type2 <span class="text-danger font-weight-bold">par 2</span>, type3 <span class="text-danger font-weight-bold">par 3</span>, …) ;
+                                            </p>
+                                            Avec:<br>
+                                            <p>Type_retour fct = type retour de la fonction <br>fct = fonction<br>type i =type du parametre i<br>par i =parametre i<br></p>
+
+                                    </div>
+
+                                    <div class="my-3">
+                                        <img src="prototype_fonct.jpg" alt="prototype d'une fonction en C" id="prot_fonct"/>
+                                    </div>
+
+                                    <div clas="my-3">
+                                        <p>
+                                            Dans cet exemple, le type de retour cette fonction est <span class="text-danger font-weight-bold">int</span> (entier), le nom de la fonction est somme et il a deux paramètres x
+                                            et y tous de types int.
+                                            Chaque prototype respecte cette syntaxe et son type de retour en dépend du types de ces paramètres et du résultat a
+                                            retourné. Dans le cas où votre fonction de ne retourne rien (<span class="text-danger font-weight-bold">void</span>), on parle de procédure mais en réalité il n’y a que de
+                                            fonctions en C/C++, pas de procédures.
+                                            Exemple :
+                                            Void bonjour () ; <span class="text-secondary">//prototype de la fonction bonjour</span>
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="AppelFonct my-3">
+                                    <h3 class="h3 font-weight-bold" id="Appel_fct"> 5.2) L’appel de fonction</h3>
+                                    <div>
+                                        <p>
+                                            Une fois que le prototype a été donné, on peut appeler notre fonction dans le main ou dans une autre fonction à condition
+                                            que le prototype de cette fonction appelante soit déclaré après la fonction appelée .Il arrive qu’une fonction aie la possibilité
+                                            de s’appeler elle-même ,on dit dans ce cas qu’elle est récursive .Ainsi pour appeler une fonction de type non <span class="text-danger">void</span>, il faut
+                                            déclarer une variable de même type que le type de retour de la fonction à appeler dans la fonction appelante puis la
+                                            déclaration des variables de types corresponds aux paramètres de la fonction appelée ensuite.Voici la syntaxe d’appel ci-dessous:
+                                        </p>
+                                        <div class="my-3">
+                                            <img src="Appel_Fonct.jpg" alt="prototype d'une fonction en C" id="Appel_Fonct"/>
+                                        </div>
+                                        <p>
+                                            Arg1, arg2, arg3,arg n sont des arguments de cette fonction.
+                                            Voyons à quoi ressemble l’appel de la fonction somme ci-haut.
+                                        </p>
+                                        <div class="my-3">
+                                            <img src="Somme_Fonct.jpg" alt="Appel de la fonction somme" id="Somme_Fonct"/>
+                                        </div>
+                                        <p>
+                                            Dans le cas où le type de retour de la fonction est void, l’appel se fait en sans avoir besoin de la variable de droite des types
+                                            non void .La syntaxe est la suivante :<br>
+                                        </p>
+                                        <div class="my-3">
+                                            <img src="Bonjour_Fonct.jpg" alt="Appel de la fonction somme" id="Bonjour_Fonct"/>
+                                        </div>
+                                        <p>
+                                            Nous venons de finir ce qui concerne l’appel, nous allons nous intéresser maintenant à leur définition.
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="Def_fonct">
+                                            <h2 class="h2 font-weight-bold" id="Def_fonction">5.3) La définition d’une fonction</h2>
+                                             <p>
+                                                Cette partie est dédiée à l’implémentation de notre fameuse fonction dont l’existence a été signalée depuis le début du
+                                               programme via son prototype.
+                                               En effet, c’est dans cette partie que programmeur va coder ce qu’il veut que la fonction fasse comme tâche. Cette partie
+                                               nécessite une attention particulière car c’est le moment de pouvoir traduire le besoin attendu en code.
+                                               La définition d’une fonction se constitue de l’entête de la fonction (prototype moins ;)suivi d’un bloc d’instruction délimité par
+                                               des accolades fermante et ouvrante</p>
+                                            <p class="font-weight-bold my-2"><span            class="h4">Syntaxe:</span><br>
+                                                &lt<span class="text-danger font-weight-bold">Type_retour fct</span>&gt &nbsp&ltnom_fct&gt (type1 <span class="text-danger font-weight-bold">par 1</span>, type2 <span class="text-danger font-weight-bold">par 2</span>, type3 <span class="text-danger font-weight-bold">par 3</span>, …,Type N<span class="text-danger font-weight-bold">par N</span>) ;
+                                            </p>
+                                            <div>
+                                                <span class="font-weight-bold text-danger">{</span><br>
+                                                    Instruction 1 ;<br>
+                                                    Instruction 2;<br>
+                                                    "<br>
+
+                                                    "<br>
+                                                    Instruction n ;<br>
+                                                   <span class="text-primary">return</span> résultat;<span class="text-secondary">//si le type le est diffèrent de void, sinon, pas de retour de résultat</span><br>
+                                                   <span class="font-weight-bold text-danger">}</span><br>
+
+                                            </div>
+                                            <div>
+                                                <p>Pour exemple, nous nous referons toujours au  fonction somme ci-haut.
+                                                    <span class="text-secondary">//La définition de la fonction <span class="text-danger font-weight-bold">somme ()<span></span> ;</span></p>
+                                                    <div class="my-3">
+                                                        <img src="Definition_Som.jpg" alt="DeFinition fonction somme 1" id="Definition_Som"/>
+                                                    </div>
+                                                    <p>
+                                                        Comme vous pouvez le constatez, ici nous n’avons que return car le problème est aussi simple et ne nécessite pas
+                                                        plusieurs instructions. En elle pouvait se présenter comme ce qui vient juste après mais la première est la meilleur.
+                                                    </p>
+                                                    <div class="my-3">
+                                                        <img src="Definition_Som2.jpg" alt="DeFinition fonction somme 2" id="Definition_Som2"/>
+                                                    </div>
+                                                    <p class="font-weight-bold text-secondary">//Définition de la fonction bonjour ();
+                                                    </p>
+                                                    <div class="my-3">
+                                                        <img src="Definition_Bonj.jpg" alt="DeFinition de la fonction Bonjour" id="Bonjour_Fonct"/>
+                                                    </div>
+                                                    <div>
+                                                        <p>
+                                                            Ahhh et en fin ! Nous somme arrivé au bout de la création d’une fonction, mes encouragements à ceux qui se sont donnés
+                                                            jusqu’ici. La question que vous vous posez est peut-être c’est quoi ces histoires de paramètres et d’arguments ? Alors la
+                                                            réponse est la suivante.
+                                                        </p>
+                                                    </div>
+
+                                            </div>
+                                        </div>
+                            </div>
+
+                        </div>
+
+                        <div class="Param_Arg_Port">
+                            <h2 class="h2 font-weight-bold" id="Param_Arg_Portee"> 6) Les paramètres, arguments leur portée</h2>
+                            <div>
+                                    🔸 <span class="font-weight-bold text-danger">Les paramètres :</span><br> Ce sont des variables qu’on déclare dans le prototype d’une fonction. Ces paramètres sont
+                                    précédés par leur type et séparés les uns aux par un virgule(,).On appelle ces derniers des variables formelles. <br>
+                                    🔸 <span class="font-weight-bold text-danger">Les arguments :</span><br>Quant à ce qui concerne les arguments, c’est les variables que l’on passe à la fonction dès son
+                                    appel et ils sont déclarés dans la fonction appelante. Ils sont dit variables effectives.<br>
+                                    🔸 <span class="font-weight-bold text-danger">La portée (zone d’accessibilité ):</span><br>
+                                    La porte d’une variable comme je l’avais souligné dans le tout premier article, c’est l’étendue de reconnaissance
+                                    (accessibilité) d’une variable. Ainsi, les paramètres d’une fonction sont locales a cette fonction c’est-à-dire ces
+                                    variables ne sont reconnues que par cette fonction. Tandis-que les arguments sont globales, accessible à tout le
+                                    programme appelant.<br>
+                                    Dans notre fonction <b>int somme (int x, int y)</b> ci-haut, on a :<br>
+                                   <b> Paramètres :</b> x et y ;<br>
+                                   <b>Argument :</b> nbr1 et nbr2 ;<br><b>som</b> = somme (nbr1, nbr2);<span class="text-secondary">// appel de la fonction somme ;</span><br>
+                                    <b>Portée :</b>x ,y sont local la fonction somme() et nbr1,nbr2 sont globales, accessibles dans tout le main() ou dans tout
+                                    le programme appelant. Ceci met fin à ce que j’avais a partager avec vous mais nous allons prendre au moins un
+                                    exercice pratique au qu’elle nous allons réfléchir ensemble .<br>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="Exo_Pratiq">
+                            <h2 class="h2 font-weight-bold" id="Exo_Pratique"> 7) Exercice pratiques</h2>
+                            <div>
+                                <p>
+                                    Elaborer un programme C++ servant d’un petit jeu de mot. Le jeu consiste à faire l’interaction entre deux joueurs.
+                                    Le premier entre un mot auquel le programmeur se chargera de mélanger les lettres de ce mot puis demande en
+                                    fin au deuxième joueur de trouver le mot correspondant à partir du mot mélangé par le programmeur. S’il parvient
+                                    à trouver, le programme l’affiche un message de félicitation et son nombre d’essaies sinon, le programme lui
+                                    propose de retaper le mot correspondant et ainsi de suite. Le programme doit lui donner le mot correspond puis
+                                    s’arrêter pour cette séquence lorsqu’il fait 5 essaies sans trouver ce mot. Ce fut la fin du jeu .mais il peut arriver
+                                    que le jeu demeure intéressant pour les joueurs. Alors on doit devoir les proposer s’ils veulent jouer de nouveau ou
+                                    pas.si oui le jeu recommence, sinon le programme prend fin.
+                                    Exemple : Le joueur1 entre le mot maison
+                                    Les lettres du mot maison peuvent être mélangés cette façon ou d’une autre : ismano
+                                    Le joueur2 doit exactement trouver maison à partir de ismano.
+                                    Réfléchissez un peu avant de tombe sur le corrige que je vous propose ci-dessous.
+                                    NB : L’exercice doit être résolu en utilisant des fonctions, à vous de voir quelle sorte de fonction faut-il utilisez pour parvenir
+                                    aux besoins attendus.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Solution_Exo">
+                            <h2 class="h2 font-weight-bold" id="SolutionExoP"> 8) Solution</h2>
+                            <div>
+                                <p>Je vous invite a reflechir sur cet exemple et eassayer de le resoudre a votre maniere.Quant ce qui concerne ce que je vous propose comme solution,ça sera diponible sur ma chaine youtube du nom de <b>programmeur dla</b>.<br> Pour se rendre sur la chaine,il suffit de rechercher <b>programmeur dla</b> quelque soit votre navigateur utilisé et  vous retrouverez la chaine en question .Mais pourqoui tout ça 😍😍 ? Il n'y a pas en core plus simple ?  Bien-sûr que oui. Alors &nbsp<a class="link" href="https://www.youtube.com/channel/UC4FvizBLyAfvY-gPdZaIGSg">Cliquez ici pour sur programmeur dla</a></p>
+                            </div>
+                        </div>
+                        <div class="Resume_Article">
+                            <h2 class="h2 font-weight-bold " id="Resume"> 9) Resumé</h2>
+                            <div>
+                                <p>
+                                    L’usage de fonctions est très capital car elles permettent rendre plus compact votre code, d’éviter la réécriture du même
+                                    code de résolution de problèmes présentant des propriétés similaires. Il est à noter que dans cet article je n’ai que parler de
+                                    manière implicite d’un seul type de passage de paramètres qui est le passage par valeur ou l’argument est copier dans le
+                                    paramètre correspond dans la fonction appelée. J’aurai pu vous parler de cela mais nous n’avons pas encore vu les notions
+                                    de pointeur et de référence. Sur ceux, je vous garantie que dans l’article prochain, nous aurons l’occasion de parler en 
+                                    même temps de pointeur, référence ainsi que tous les types de passages de paramètres des fonctions. Je vous rappelle 
+                                    également que les parties d’une fonction peuvent-être revue en deux parties à savoir la définition et l’appelle. A cet effet, la 
+                                    définition doit placer avant le programme appelant et non après comme cela a été le cas dans notre exemple. Ce fut la fin 
+                                    de cet article, mes félicitations à vous qui êtes arrivés à termes. Merci et bon courage. 
+                                </p>
+                            </div>
+                        </div>
+
+
+
+
+
+                            <div class="References my-3">
+                                <h2 class="h2 font-weight-bold" id="Refs">10) Lien utiles :</h2>
+                                <p>
+                                    <a class="link" href="https://www.youtube.com/watch?v=GDA6jJxId2k">https://www.youtube.com/watch?v=GDA6jJxId2k</a><br>
+                                    <a class="link" href="https://zestedesavoir.com/tutoriels/755/le-langage-c-1/1042_les-bases-du-langage-c/4296_les-fonctions/">https://zestedesavoir.com/tutoriels/755/le-langage-c-1-fonctions/</a><br>
+                                    <a class="link" href=" https://cpp.developpez.com/cours/cpp/?page=page_3"> https://cpp.developpez.com/cours/cpp/?page=page_3</a><br>
+                                    <a class="link" href="https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Les_fonctions">https://fr.wikibooks.org/wiki/Programmation_C-C%2B%2B/Les_fonctions</a> <br>
+                                    <a class="link" href=" https://ans.wiki/q/a-quoi-sert-l-instruction-srandtimenull-dans-un-programme-en-c/"> https://ans.wiki/q/a-quoi-sert-l-instruction-srandtimenull-dans-un-programme-en-c/</a>
+                                    </p>
+
+                            </div>
+
+                  </div>
+                </div>
+            </div>
+
+
+            <!--Conteneur  principal contenant les autres infos du footer-->
+            <div class="container-fluid footer containerFooter rounded bg-dark mt-4 ">    
+                <!--debut partie de Liens-->             
+                <div class="p-1">                                   
+                    <div class="row mx-1 my-2 bg-white text-center" id="LiensTutoMaChaine">
+                        <div class="col-12 text-dark text-center font-weight-bold h3">
+                           Ci-joints les liens de quelques tutoriels que vous pouvez consulter
+  
+                        </div>
+  
+                        <div class="col-12 col-md-4 bg-dark">
+                           <div class="bg-white my-3 py-3 pl-2">
+                               <ul class="nav flex-column">
+                                   <li class="my-2">
+                                       <a class="link" href="https://youtu.be/rQfnYdXtcjs">PROGRAMME DE LA CHAINE ... DLA</a>
+                                   </li>
+                                   <li class="my-2">
+                                       <a class="link" href="https://youtu.be/ihUNuS6gLd0">PREREQUIS  DU LANGAGE C</a>
+                                   </li>
+  
+                                   <li class="my-2">
+                                       <a class="link" href="https://youtu.be/zK-feykv7I0">TELECHARGER ET INSTALLER CODEBLOCK</a>
+                                   </li>
+                                   <li class="my-2">
+                                       <a class="link" href="https://youtu.be/q1qA0sl4zhQ">COMMENT CREER SON 1<sup>er</sup> PROJET EN C</a>
+                                   </li>
+  
+                                   <li class="my-2">
+                                       <a class="link" href="https://youtu.be/QSNsMpS-ERM">LES TYPES DE DONNE EN LANGAGE C</a>
+                                   </li>
+                                   <li class="my-2">
+                                       <a class="link" href="https://youtu.be/_1Z7BmUFRQI">VARIABLE ET LEUR  DECLARATION</a>
+                                   </li>
+                               </ul>
+                        </div>
+  
+                        </div>
+                        <div class="col-12 col-md-4 bg-dark">
+                           <div class="bg-white my-3 py-3 pl-2">
+                          <ul class="nav flex-column">
+                              <li class="my-2">
+                                  <a class="link" href="https://youtu.be/QU8kfrbJklA">COMMENT RECUPERER LES INFORMATIONS</a>
+                              </li>
+                              <li class="my-2">
+                                  <a class="link" href="https://youtu.be/5tfT3Av32-0">LES OPERATEURS ARITHMETIQUES</a>
+                              </li>
+  
+                              <li class="my-2">
+                                  <a class="link" href="https://youtu.be/9XqIOYuEcUc">LES OPERATEURS DE COMPARAISON </a>
+                              </li>
+                              <li class="my-2">
+                               <a class="link" href="https://youtu.be/e_j__yDE08Y">LES OPERATEURS LOGIQUES</a>
+                             </li>
+                              <li class="my-2">
+                                  <a class="link" href="https://youtu.be/aGGyR4jkF-E">COMMENT UTILISER CPPDROID SUR ...</a>
+                              </li>
+  
+                              <li class="my-2">
+                                  <a class="link" href="https://youtu.be/n40Nt2vWnE8">CONDITION SIMPLE IF</a>
+                              </li>                            
+                          </ul>
+                      </div>
+  
+                      </div>
+  
+                        <div class="col-12 col-md-4 text-center bg-dark">
+                             <div class="bg-white my-3 py-3 pl-2">
+                            <ul class="nav flex-column">
+                               <li class="my-2">
+                                   <a class="link" href="https://youtu.be/8dx5FE7fQO8">CONDITION ALTERNATIVE  IF  ELSE</a>
+                               </li>
+  
+                                <li class="my-2">
+                                    <a class="link" href="https://youtu.be/uCWdpTxem1U">CONDITION ALTERNATIVE MULTIPLE</a>
+                                </li>
+  
+                                <li class="my-2">
+                                    <a class="link" href="https://youtu.be/y5W0eG3Iu70">D'INCREMENTATION ET DE DECREMENTATION</a>
+                                </li>
+                                <li class="my-2">
+                                    <a class="link" href="https://youtu.be/5IFetzT3Pl8">LA BOUCLE FOR EN LANGAGE C</a>
+                                </li>
+  
+                                <li  class="mt-2 mb-5">
+                                    <a class="link my-2" href="https://youtu.be/02Zbwveho90">LA BOUCLE WHILE EN LANGAGE C</a>
+                                </li>
+                            </ul>
+                        </div>
+  
+                        </div>
+  
+                    </div>
+  
+                </div>
+                <div class="row bg-white p-2">
+                  <div class="col-12">
+  
+                  </div>
+  
+                </div>
+  
+  
+  
+  
+                  <!--fin du partie des liens-->
+  
+                   <!--traçage des lignes horizontales en escalier decroissanntes-->
+                  <div class="espaceLigneP"> </div><br>
+                  <p class="h2 text-center text-white">Copyright@2021 all right reserved </p>
+                   <div class="espaceLigneP"> </div>
+                   <hr width="100%" size="5" color="white" />
+                   <div class="espaceLigneP"> </div>
+                   <div class="row">
+                       <div class="col-12 text-center">
+                           <p class="h2 text-white">Veuillez nous contacter sur:</p>
+                       </div>
+                   </div>
+                   <div class="espaceLigne"> </div>
+                   
+                   <div class="row">
+                       <div class="col-2 col-md-6 text-center text-white font-weight-bold">Tel :</div><br>
+                       <div class="col col-md-6 text-center text-white font-weight-bold">(+213) 557498513</div>                
+                                               
+                   </div>
+                   <div class="espaceLigneP"> </div><br><br>
+                   <div class="row">
+                       <div class="col-2 col-md-6 text-center text-white font-weight-bold">Mail :</div>                        
+                       <div class="col col-md-6 text-center text-white"><a  class="link font-weight-bold" href="mailto:programmeurdlamb@gmail.com">Cliquez ici pour nous envoyer</a></div>   
+                   </div>
+                   <hr width="100%" size="5" color="white" />
+                   <div class="espaceLigne"> </div>
+                   <div class="row">
+                       <div class="col-12 text-center">
+                           <p class="h2 text-white">Nos Réseaux sociaux:</p>
+                       </div>
+                   </div><br>
+                   <div class="espaceLigneP"> </div>
+                   <div class="espaceLigneP"> </div>
+  
+                   <div class="row">
+                       <div class="col col-md-4 text-center" ><a href="https://www.facebook.com/lamboni.dambe.1"><img src="Facebook.png" id="facebook" alt="facebook"> </a>
+  
+                       </div>
+                       <div class="col col-md-4 text-center"><a href="https://www.instagram.com/lamboni.dambe.1"><img src="instagram.jpg" id="instagram" alt="instagram"></a>
+  
+                       </div>
+                       <div class="col col-md-4 text-center"><a href="https://twitter.com/"><img src="twitter.jpg" id="twitter" alt="twitter"></a>
+  
+                       </div>
+                   </div>
+                   
+             </div>  
+
+        </main>
+
+        <!--Ces liens sont pour le CDN JQuery et il seront inclut dans les page concenrés avec la fontion require() de php juste avant la fermeture la balise body-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+
+  </body>
+</html>
